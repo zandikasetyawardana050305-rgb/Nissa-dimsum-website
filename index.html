@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nissa Dimsum</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1 id="namaToko"></h1>
+  <p id="tagline"></p>
+  <nav class="tabs">
+    <button id="tMenu" class="on">Menu</button>
+    <button id="tOrd">Daftar Pesanan (Admin)</button>
+  </nav>
+</header>
+<main>
+  <section id="menuView">
+    <div class="grid" id="grid"></div>
+    <div class="panel">
+      <h2>🛒 Keranjang</h2>
+      <div id="cart" class="note">Belum ada pesanan.</div>
+      <button class="btn" id="checkoutBtn" disabled>Checkout</button>
+    </div>
+  </section>
+
+  <section id="checkoutView" class="hide">
+    <div class="panel">
+      <h2>Checkout</h2>
+      <div id="summary"></div>
+      <input type="text" id="nama" placeholder="Nama pembeli">
+      <b>Metode Pembayaran</b>
+      <div class="pay">
+        <label><input type="radio" name="pay" value="Cash" checked> Cash</label>
+        <label><input type="radio" name="pay" value="QRIS"> QRIS</label>
+      </div>
+      <div id="qrisBox" class="hide center">
+        <p class="note">Scan QRIS di bawah, lalu masukkan nominal <b id="qrisTotal"></b></p>
+        <img id="qrisImg" class="qr" alt="QRIS">
+      </div>
+      <button class="btn" id="payBtn">Pesan Sekarang</button>
+      <button class="btn2" id="backBtn">← Kembali ke menu</button>
+    </div>
+  </section>
+
+  <section id="resultView" class="hide">
+    <div class="panel">
+      <div class="ok">✅</div>
+      <h2 class="center">Pesanan Berhasil!</h2>
+      <div id="receipt"></div>
+      <button class="btn" id="newBtn">Kembali</button>
+    </div>
+  </section>
+
+  <section id="ordersView" class="hide">
+    <div class="panel">
+      <h2>📋 Semua Pesanan Pelanggan</h2>
+      <div id="ordList" class="note">Belum ada pesanan.</div>
+      <button class="btn2" id="refreshBtn">🔄 Muat ulang</button>
+      <p class="note" id="modeNote"></p>
+      <button class="btn2" id="resetBtn">Hapus semua pesanan</button>
+    </div>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
